@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/MihailChapenko/lets-go-chat-app/internal/api/v1/meta"
+	"github.com/MihailChapenko/lets-go-chat-app/internal/api/v1/user"
 	"github.com/gorilla/mux"
 	"net/http"
 )
@@ -10,8 +10,8 @@ import (
 func NewRouter() *mux.Router {
 	r := mux.NewRouter()
 
-	metaHandler := meta.NewHandler()
-	metaHandler.InitRoutes(r)
+	v1 := r.PathPrefix("/v1").Subrouter()
+	user.NewHandler().InitRoutes(v1)
 
 	http.Handle("/", r)
 
