@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	config.Init("config.yaml")
+	config.Init("../internal/config/config.yaml")
 	//db.Init(config.Get().DB)
 	server.Init()
 }
