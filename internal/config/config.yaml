@@ -1,3 +1,10 @@
 # server settings:
 server:
   port: 8080
+
+# db settings:
+db:
+  dialect: postgres
+  datasource: postgres://chapenkomihail:@127.0.0.1:5432/test
+  dir: ./db/migrations
+  table: migrations

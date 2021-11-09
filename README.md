@@ -2,9 +2,6 @@
 
 ###To run the project
 * run in terminal `go run main.go`
-* now available only two routes:
-*`http://localhost:8080/v1/meta/`
-*`http://localhost:8080/v1/meta/else`
 
 ###To see the documentation
 * run in terminal `godoc -http=:6060`
