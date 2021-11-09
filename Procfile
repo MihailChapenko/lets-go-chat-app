@@ -1,1 +1,1 @@
-web: bin/lets-go-chat-app
+web: cmd/bin/lets-go-chat-app
