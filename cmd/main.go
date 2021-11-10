@@ -13,6 +13,7 @@ func main() {
 		panic(err)
 	}
 	config.Init(filepath.Join(pwd, "../internal/config/config.yaml"))
-	//db.Init(config.Get().DB)
-	server.Init()
+	cfg := config.Get()
+
+	server.Init(cfg.Server.Port)
 }

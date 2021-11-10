@@ -3,7 +3,6 @@ package server
 import (
 	"context"
 	"fmt"
-	"github.com/MihailChapenko/lets-go-chat-app/internal/config"
 	"log"
 	"net/http"
 	"os"
@@ -12,11 +11,9 @@ import (
 )
 
 //Init initialize and run server
-func Init() {
-	cfg := config.Get()
-
+func Init(port string) {
 	srv := &http.Server{
-		Addr:    fmt.Sprintf(":%s", cfg.Server.Port),
+		Addr:    fmt.Sprintf(":%s", port),
 		Handler: NewRouter(),
 	}
 
