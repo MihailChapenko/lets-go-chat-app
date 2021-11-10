@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gopkg.in/yaml.v3"
 	"io/ioutil"
+	"log"
 )
 
 var config Config
@@ -29,6 +30,7 @@ type DB struct {
 //Init read and parse config from yaml
 func Init(path string) {
 	rawConfig, err := ioutil.ReadFile(path)
+	log.Println(string(rawConfig))
 	if err != nil {
 		fmt.Printf("Error: %s", err)
 	}
@@ -37,6 +39,7 @@ func Init(path string) {
 	if err != nil {
 		fmt.Printf("Error: %s", err)
 	}
+	log.Println(config.Server.Port)
 }
 
 //Get returns config instance
